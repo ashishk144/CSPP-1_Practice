@@ -30,8 +30,8 @@ def is_straight(hand):
     '''
     temp_hand = sorted(hand)
     print(temp_hand)
-    for i in enumerate(temp_hand):
-    	if (card_value(temp_hand[i+1][0]) - card_value(temp_hand[i][0])) != 1:
+    for i in range(len(temp_hand)-1):
+    	if (card_value(temp_hand[i+1]) - card_value(temp_hand[i])) != 1:
     		return 0
     return 3
 
