@@ -10,12 +10,13 @@
 def card_value(x):
     if x[0] == 'T':
         return 10
-    elif x[0] == 'J':
+    if x[0] == 'J':
         return 11
-    elif x[0] == 'Q':
+    if x[0] == 'Q':
         return 12
-    elif x[0] == 'K':
+    if x[0] == 'K':
         return 13
+    if x[0] == 'A':
     return int(x[0])
 
 def is_straight(hand):
@@ -29,7 +30,7 @@ def is_straight(hand):
         Write the code for it and return True if it is a straight else return False
     '''
     temp_hand = sorted(hand)
-    print(temp_hand)
+    #print(temp_hand)
     for i in range(len(temp_hand)-1):
         if (card_value(temp_hand[i+1]) - card_value(temp_hand[i])) != 1:
             return 0
