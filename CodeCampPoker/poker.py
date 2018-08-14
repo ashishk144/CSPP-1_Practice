@@ -31,7 +31,7 @@ def is_straight(hand):
         Write the code for it and return True if it is a straight else return False
     '''
     temp_hand = sorted(hand)
-    #print(temp_hand)
+    print(temp_hand)
     for i in range(len(temp_hand)-1):
         if (card_value(temp_hand[i+1]) - card_value(temp_hand[i])) != 1:
             return False
