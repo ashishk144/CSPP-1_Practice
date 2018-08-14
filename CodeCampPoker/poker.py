@@ -45,7 +45,7 @@ def is_flush(hand):
         Write the code for it and return True if it is a flush else return False
     '''
     for [i,j] in enumerate(hand):
-        if j[i][1] != j[i+1][1]:
+        if j[i-1][1] != j[i][1]:
             return 0
     return 2 
 
