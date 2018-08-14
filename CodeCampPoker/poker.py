@@ -9,13 +9,13 @@ S_CARDS = ['2S', '3S', '4S', '5S', '6S', '7S', '8S', '9S', 'TS', 'JS', 'QS', 'KS
 C_CARDS = ['2C', '3C', '4C', '5C', '6C', '7C', '8C', '9C', 'TC', 'JC', 'QC', 'KC', 'AC']
 def card_value(x):
 	if x[0] == 'T':
-		return x[0]=10
+		return 10
 	elif x[0] == 'J':
-		return x[0]=11
+		return 11
 	elif x[0] == 'Q':
-		return x[0]=12
+		return 12
 	elif x[0] == 'K':
-		return x[0]=13
+		return 13
 	return x[0]
 
 def is_straight(hand):
