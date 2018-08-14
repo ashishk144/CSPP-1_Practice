@@ -3,20 +3,19 @@
     Read about poker hands here.
     https://en.wikipedia.org/wiki/List_of_poker_hands
 '''
-D_CARDS = ['2D', '3D', '4D', '5D', '6D', '7D', '8D', '9D', 'TD', 'JD', 'QD', 'KD', 'AD']
-H_CARDS = ['2H', '3H', '4H', '5H', '6H', '7H', '8H', '9H', 'TH', 'JH', 'QH', 'KH', 'AH']
-S_CARDS = ['2S', '3S', '4S', '5S', '6S', '7S', '8S', '9S', 'TS', 'JS', 'QS', 'KS', 'AS']
-C_CARDS = ['2C', '3C', '4C', '5C', '6C', '7C', '8C', '9C', 'TC', 'JC', 'QC', 'KC', 'AC']
+# D_CARDS = ['2D', '3D', '4D', '5D', '6D', '7D', '8D', '9D', 'TD', 'JD', 'QD', 'KD', 'AD']
+# H_CARDS = ['2H', '3H', '4H', '5H', '6H', '7H', '8H', '9H', 'TH', 'JH', 'QH', 'KH', 'AH']
+# S_CARDS = ['2S', '3S', '4S', '5S', '6S', '7S', '8S', '9S', 'TS', 'JS', 'QS', 'KS', 'AS']
+# C_CARDS = ['2C', '3C', '4C', '5C', '6C', '7C', '8C', '9C', 'TC', 'JC', 'QC', 'KC', 'AC']
 def card_value(x):
-	if x[0] == 'T':
-		return 10
-	elif x[0] == 'J':
-		return 11
-	elif x[0] == 'Q':
-		return 12
-	elif x[0] == 'K':
-		return 13
-	return x[0]
+    if x[0] == 'T':
+        return 10
+    elif x[0] == 'J':
+        return 11
+    elif x[0] == 'Q':
+        return 12
+    elif x[0] == 'K':
+        return 13
 
 def is_straight(hand):
     '''
@@ -31,8 +30,8 @@ def is_straight(hand):
     temp_hand = sorted(hand)
     print(temp_hand)
     for i in range(len(temp_hand)-1):
-    	if (card_value(temp_hand[i+1][0]) - card_value(temp_hand[i][0])) != 1:
-    		return 0
+        if (card_value(temp_hand[i+1]) - card_value(temp_hand[i])) != 1:
+            return 0
     return 3
 
 def is_flush(hand):
@@ -45,8 +44,8 @@ def is_flush(hand):
         Write the code for it and return True if it is a flush else return False
     '''
     for [i,j] in enumerate(hand):
-    	if j[i][1] != j[i+1][1]:
-    		return 0
+        if j[i][1] != j[i+1][1]:
+            return 0
     return 2 
 
 def hand_rank(hand):
@@ -74,11 +73,11 @@ def hand_rank(hand):
     # any other hand would be the fourth best with the return value 0
     # max in poker function uses these return values to select the best hand
     if is_straight(hand)+is_flush(hand) == 5:
-    	return 5
+        return 5
     elif is_flush(hand) == 3:
-    	return 3
+        return 3
     elif is_straight(hand) == 2:
-    	return 2
+        return 2
     return 1
 
 def poker(hands):
