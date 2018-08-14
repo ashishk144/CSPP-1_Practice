@@ -18,6 +18,7 @@ def is_straight(hand):
     for c,s in hand:
         new_list.append(face_value.index(c))
         set_list = set(new_list)
+    print(len(set_list), max(new_list)-min(new_list))
     return len(set_list) == 5 and (max(new_list) - min(new_list)) == 4
     # card_values = set(['--23456789TJQKA'.index(c) for c,s in hand])
     # print(card_values)
@@ -35,6 +36,7 @@ def is_flush(hand):
     suit_set = set()
     for each_card in hand:
         suit_set.add(each_card[1])
+    print(suit_set == 1)
     return suit_set == 1
 
 def hand_rank(hand):
