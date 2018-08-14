@@ -16,7 +16,7 @@ def card_value(x):
         return 12
     elif x[0] == 'K':
         return 13
-    return int(x)
+    return int(x[0])
 
 def is_straight(hand):
     '''
