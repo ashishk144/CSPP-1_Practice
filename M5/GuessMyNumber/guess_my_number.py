@@ -15,7 +15,7 @@ def main():
         elif in_p == 'h':
             h_i = an_s
         else:
-            print("Invalid")
+            print("Invalid entry")
         an_s = (l_o+h_i)//2
 if __name__ == "__main__":
     main()

@@ -16,6 +16,7 @@ def oddTuples(a_tup):
         if not i%2:
             btup = btup + (j, )
     return btup
+    #return a_tup[::2]
 def main():
     '''defining main'''
     data = input()
